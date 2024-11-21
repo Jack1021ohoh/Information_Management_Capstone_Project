@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+@font-face {
+  font-family: "Cubic 11";
+  src: url("../font/pixel.woff") format("woff"),
+}
+
+@import "./nes/nes-ui";
+@import "bootstrap/scss/functions"; 
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+
+@import "react-datepicker/src/stylesheets/datepicker.scss";
+
+$primary: #7D3A6B;
+$secondary: #496183;
+$bgBlue: #000;
+$bgBlueLight: #1F2937;
+$bgLight: #807D7B;
+$danger: #EF4444;
+$light: #fff;
+$dark: #000;
+$lightPrimary: #9FA7ED;
+$lightGray: #EFEFEF;
+$gray: #8B8B8B;
+
+$btnBlue: #384151;
+
+$inputBg: #384151;
+$inputBorder: #6B7280;
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "light": $light,
+  "dark": $dark,
+  "danger": $danger,
+);
+
+$theme-colors: map-merge($theme-colors, (
+  "gray": $gray,
+  "lightPrimary": $lightPrimary,
+  "lightGray": $lightGray,
+  "bgBlue": $bgBlue,
+  "bgBlueLight": $bgBlueLight,
+  "btnBlue": $btnBlue,
+  "bgLight": $bgLight,
+));
+
+$navbar-toggler-padding-y: 0;
+$navbar-toggler-padding-x: 0;
+$navbar-toggler-border-radius: 0;
+$navbar-light-color: $gray;
+$navbar-light-hover-color: $gray;
+$navbar-light-active-color: $dark;
+
+$transition-collapse: none;
+
+@import "bootstrap";
+
+html, body {
+  font-family: 'Cubic 11', cursive;
+}
+
+a {
+  text-decoration: none;
+}
+
+.material-symbols-sharp {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 600,
+  'GRAD' 200,
+  'opsz' 48
+}
+
+.navbar {
+  z-index: 10;
+  background-color: inherit;
+
+  .navbar-toggler {
+    border: 0;
+  }
+  .nav-link {
+    margin-bottom: 1rem;
+    position: relative;
+    font-size: 1.25em;
+  
+    &.active {
+      pointer-events: none;
+      padding-left: 24px;
+  
+      &::before {
+        position: absolute;
+        left: -2px;
+        margin-top: 4px;
+        content: "";
+        width: 2px;
+        height: 2px;
+        color: $dark;
+        box-shadow: 2px 2px,4px 2px,2px 4px,4px 4px,6px 4px,8px 4px,2px 6px,4px 6px,6px 6px,8px 6px,10px 6px,2px 8px,4px 8px,6px 8px,8px 8px,10px 8px,12px 8px,2px 10px,4px 10px,6px 10px,8px 10px,10px 10px,2px 12px,4px 12px,6px 12px,8px 12px,2px 14px,4px 14px;
+      }
+    }
+  
+    p {
+      font-family: 'Cubic 11', cursive !important;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.container.h-100 {
+  height: calc(100% - 76px) !important;
+}
+
+.bg-marketContainer {
+  background-color: #D5E1E2;
+}
+
+.react-datepicker {
+  background-color: transparent !important;
+}
+
+.background {
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.coupon-img {
+  &.line {
+    background-color: #00CD67 !important;
+  }
+  &.mcdonalds {
+    background-color: #ED1A2D !important;
+  }
+  &.nike {
+    background-color: #F1632F !important;
+  }
+  &.adidas {
+    background-color: #146AB6 !important;
+  }
+  &.worldgym {
+    background-color: #E70012 !important;
+  }
+
+  img {
+    align-self: center;
+  }
+}
+
+.react-datepicker {
+  width: 100%;
+  border: 0;
+  font-family: 'Cubic 11', cursive;
+  
+  .react-datepicker__header {
+    background-color: transparent;
+    padding: 0;
+    padding-bottom: 1rem;
+    border: 0;
+  }
+
+  .react-datepicker__month-container {
+    float: none;
+
+    .react-datepicker__month {
+      margin: 0;
+    }
+  }
+
+  .react-datepicker__day-name {
+    @extend .text-gray;
+
+    width: calc((100% - 3rem) / 7);
+    margin: 0;
+    margin-right: .5rem;
+  }
+  
+  .react-datepicker__day {
+    width: calc((100% - 3rem) / 7);
+    margin: 0;
+    margin-right: .5rem;
+    margin-bottom: .5rem;
+    background-color: transparent;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  
+    .nes-ui-button-wrapper {
+      width: 100%;
+    }
+  }
+
+  .react-datepicker__week:last-of-type .react-datepicker__day {
+    margin-bottom: 0;
+  }
+
+  .react-datepicker__day--today .nes-ui-btn {
+    @extend .nes-ui-btn-primary;
+  }
+
+  .react-datepicker__day--highlighted .nes-ui-btn {
+    @extend .nes-ui-btn-success;
+  }
+}
+
+.portrait-container {
+  img {
+    $border-color: $dark;
+    $border-width: 4px;
+
+    //filter: drop-shadow(0 #{$border-width} 0 $border-color) drop-shadow(0 -#{$border-width} 0 $border-color) drop-shadow(#{$border-width} 0 0 $border-color) drop-shadow(-#{$border-width} 0 0 $border-color);
+  }
+}
